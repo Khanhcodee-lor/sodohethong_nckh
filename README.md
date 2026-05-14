@@ -1,6 +1,3 @@
-# Hệ Thống IoT Giám Sát Và Điều Khiển Nông Nghiệp
-
-README này tóm tắt chức năng các khối trong hệ thống để dễ viết báo cáo và làm slide.
 
 ## Sơ đồ khối hệ thống
 
