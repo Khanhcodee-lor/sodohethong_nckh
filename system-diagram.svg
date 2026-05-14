@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Mobile App -->
+  <rect x="50" y="350" width="120" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="110" y="395" text-anchor="middle" font-family="Arial" font-size="14" fill="black">Mobile App</text>
+  
+  <!-- Firebase -->
+  <rect x="300" y="350" width="120" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="360" y="395" text-anchor="middle" font-family="Arial" font-size="14" fill="black">Firebase</text>
+  
+  <!-- Raspberry Pi -->
+  <rect x="550" y="350" width="120" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="610" y="385" text-anchor="middle" font-family="Arial" font-size="14" fill="black">Raspberry Pi</text>
+  
+  <!-- Camera -->
+  <rect x="550" y="150" width="120" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="610" y="195" text-anchor="middle" font-family="Arial" font-size="14" fill="black">Camera</text>
+  
+  <!-- Hugging Face Server -->
+  <rect x="800" y="150" width="140" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="870" y="185" text-anchor="middle" font-family="Arial" font-size="12" fill="black">Hugging Face</text>
+  <text x="870" y="205" text-anchor="middle" font-family="Arial" font-size="12" fill="black">Server</text>
+  
+  <!-- ESP32 -->
+  <rect x="550" y="550" width="120" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="610" y="595" text-anchor="middle" font-family="Arial" font-size="14" fill="black">ESP32</text>
+  
+  <!-- Sensors -->
+  <rect x="800" y="500" width="120" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="860" y="545" text-anchor="middle" font-family="Arial" font-size="14" fill="black">Sensors</text>
+  
+  <!-- Pump -->
+  <rect x="800" y="600" width="120" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="860" y="645" text-anchor="middle" font-family="Arial" font-size="14" fill="black">Pump</text>
+  
+  <!-- Arrows - Luồng chụp ảnh -->
+  <!-- Mobile App → Firebase -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="black"/>
+    </marker>
+  </defs>
+  
+  <line x1="170" y1="370" x2="300" y2="370" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="235" y="365" font-family="Arial" font-size="10" fill="black">gửi lệnh chụp</text>
+  
+  <!-- Firebase → Raspberry Pi -->
+  <line x1="420" y1="380" x2="550" y2="380" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="485" y="375" font-family="Arial" font-size="10" fill="black">nhận lệnh</text>
+  
+  <!-- Raspberry Pi → Camera -->
+  <line x1="610" y1="350" x2="610" y2="230" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="620" y="290" font-family="Arial" font-size="10" fill="black">điều khiển chụp</text>
+  
+  <!-- Camera → Raspberry Pi -->
+  <line x1="630" y1="230" x2="630" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="640" y="290" font-family="Arial" font-size="10" fill="black">gửi ảnh</text>
+  
+  <!-- Raspberry Pi → Hugging Face -->
+  <line x1="670" y1="360" x2="800" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="720" y="270" font-family="Arial" font-size="10" fill="black">gửi ảnh AI</text>
+  
+  <!-- Hugging Face → Firebase -->
+  <line x1="800" y1="210" x2="420" y2="360" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="580" y="270" font-family="Arial" font-size="10" fill="black">trả kết quả</text>
+  
+  <!-- Firebase → Mobile App -->
+  <line x1="300" y1="400" x2="170" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="235" y="415" font-family="Arial" font-size="10" fill="black">hiển thị kết quả</text>
+  
+  <!-- Luồng cảm biến -->
+  <!-- Sensors → ESP32 -->
+  <line x1="800" y1="540" x2="670" y2="580" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="720" y="555" font-family="Arial" font-size="10" fill="black">đọc dữ liệu</text>
+  
+  <!-- ESP32 → Raspberry Pi -->
+  <line x1="610" y1="550" x2="610" y2="430" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="620" y="490" font-family="Arial" font-size="10" fill="black">gửi qua BLE</text>
+  
+  <!-- Raspberry Pi → Firebase (sensor data) -->
+  <line x1="550" y1="400" x2="420" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="485" y="415" font-family="Arial" font-size="10" fill="black">đẩy dữ liệu</text>
+  
+  <!-- Firebase → Mobile App (sensor display) -->
+  <line x1="300" y1="410" x2="170" y2="410" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="235" y="425" font-family="Arial" font-size="10" fill="black">hiển thị sensor</text>
+  
+  <!-- Luồng điều khiển bơm -->
+  <!-- Mobile App → Firebase (pump command) -->
+  <line x1="170" y1="390" x2="300" y2="390" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="235" y="385" font-family="Arial" font-size="10" fill="black">lệnh bơm</text>
+  
+  <!-- Firebase → Raspberry Pi (pump command) -->
+  <line x1="420" y1="390" x2="550" y2="390" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="485" y="405" font-family="Arial" font-size="10" fill="black">nhận lệnh bơm</text>
+  
+  <!-- Raspberry Pi → ESP32 (pump control) -->
+  <line x1="590" y1="430" x2="590" y2="550" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="490" font-family="Arial" font-size="10" fill="black">lệnh qua BLE</text>
+  
+  <!-- ESP32 → Pump -->
+  <line x1="670" y1="600" x2="800" y2="640" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="720" y="615" font-family="Arial" font-size="10" fill="black">điều khiển</text>
+  
+</svg>
